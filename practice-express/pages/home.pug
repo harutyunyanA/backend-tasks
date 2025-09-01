@@ -1,0 +1,9 @@
+link(rel="stylesheet", href="./css/style.css")
+
+div(class="container")
+    h1 We have users
+    a(href="./add") Add user 
+    a(href="./users") User list 
+    ul 
+        each user in data 
+            li #{user.name} #{user.surname} 

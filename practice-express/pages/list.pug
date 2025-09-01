@@ -1,0 +1,15 @@
+link(rel="stylesheet", href="./css/style.css")
+div(class="container")
+    h1 Users list
+    div(class="users-list")
+        if data.length == 0
+            div(class="empty-list-container")
+                p Empty list
+        else 
+            each user in data
+                div(class="item-container") 
+                    p #{user.name} #{user.surname} 
+
+    a(href="/") Home
+    
+

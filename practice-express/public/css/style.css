@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  color: brown;
+}
+ul {
+  margin: 20px 0 0 10px;
+}
+ul > li {
+  font-size: 20px;
+}
+.container {
+  margin: 20px;
+}
+.users-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.item-container {
+  padding: 8px;
+  width: 150px;
+  height: 80px;
+  text-align: center;
+  background-color: rgb(178, 255, 229);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  font-size: 20px;
+  margin: 10px 10px;
+  text-decoration: none;
+}
+.input-container {
+  margin: 15 0 0 5;
+}
+
+.input-field {
+  margin-bottom: 8px;
+}
+.empty-list-container {
+  text-align: center;
+  height: 25px;
+}
+
+.input-error {
+  color: red;
+}
+
+.save-btn {
+  margin: 15 0 15 0;
+  padding: 4px;
+  border: solid grey 1px;
+  border-radius: 4px;
+}
+.save-btn:hover {
+  background-color: rgb(217, 217, 217);
+  cursor: pointer;
+}
