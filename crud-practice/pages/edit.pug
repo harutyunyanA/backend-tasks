@@ -1,0 +1,17 @@
+link(rel="stylesheet", href="/style.css")
+
+div(class="edit-window")
+    h2 Edit User 
+    div
+        form(action=`/user-edit/${userId}` method="post" class="new-user-info")
+            div
+                label(for="")  Name: 
+                input(type="text" name="name")
+            div
+                label(for="")  Surname: 
+                input(type="text" name="surname")
+            if flag
+                p(class="err-msg") please enter name and surname
+            button Save
+            a(href="/users" class="cancel-btn") Cancel
+        

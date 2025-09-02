@@ -1,0 +1,14 @@
+link(rel="stylesheet", href="/style.css")
+h1 Add user 
+div(class= "add-user-container")
+    a(href="/") HOME 
+    form(action="/add" method="post")
+        div 
+            label(for="") Name
+            input(type="text"  name="name") 
+        div 
+            label(for="") Surname
+            input(type="text"  name="surname")
+        button Save
+        if flag
+            p(class="err-msg") please enter name and surname

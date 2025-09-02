@@ -1,0 +1,12 @@
+link(rel="stylesheet", href="/style.css")
+
+h1 Users list
+a(href="/") HOME 
+div(class="users-list")
+    each user in users
+        div(class="user-item")
+            div(class="user-info")  
+                p #{user.name} #{user.surname}
+            div(class="user-manage-btn-container")
+                a(href="/users/delete/"+user.id) DELETE
+                a(href="/users/edit/"+user.id) EDIT
