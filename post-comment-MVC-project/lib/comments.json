@@ -1,0 +1,38 @@
+[
+  {
+    "id": 101,
+    "comments": [
+      { "commentID": 1, "text": "Great post!" },
+      { "commentID": 2, "text": "Very informative." },
+      { "commentID": 1758103115920, "text": "Hello" }
+    ]
+  },
+  {
+    "id": 102,
+    "comments": [
+      { "commentID": 3, "text": "I learned a lot, thanks!" },
+      { "commentID": 4, "text": "Could use more examples." }
+    ]
+  },
+  {
+    "id": 103,
+    "comments": [
+      { "commentID": 5, "text": "Helpful and clear." },
+      { "commentID": 6, "text": "I disagree with some points." }
+    ]
+  },
+  {
+    "id": 104,
+    "comments": [
+      { "commentID": 7, "text": "Excellent explanation!" },
+      { "commentID": 8, "text": "Well structured content." }
+    ]
+  },
+  {
+    "id": 105,
+    "comments": [
+      { "commentID": 9, "text": "This clarified my doubts." },
+      { "commentID": 10, "text": "I wish there were more visuals." }
+    ]
+  }
+]

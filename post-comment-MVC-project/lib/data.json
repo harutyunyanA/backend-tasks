@@ -1,0 +1,27 @@
+[
+  {
+    "id": 101,
+    "name": "Ethan Johnson",
+    "description": "Tech blogger focused on programming tutorials and coding tips."
+  },
+  {
+    "id": 102,
+    "name": "Anna Peterson",
+    "description": "Passionate about traveling and sharing cultural experiences."
+  },
+  {
+    "id": 103,
+    "name": "David Sargent",
+    "description": "Photographer interested in landscapes and urban architecture."
+  },
+  {
+    "id": 104,
+    "name": "Mariam Gregory",
+    "description": "Practices yoga and meditation, sharing wellness tips."
+  },
+  {
+    "id": 105,
+    "name": "Narek Avetis",
+    "description": "Gamer and game developer, writing tutorials for Unity and Unreal Engine."
+  }
+]
