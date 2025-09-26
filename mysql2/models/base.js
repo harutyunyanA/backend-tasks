@@ -6,8 +6,6 @@ class Flags {
     (this.query = false),
       (this.select = false),
       (this.where = false),
-      (this.andWhere = false),
-      (this.orWhere = false),
       (this.limit = false);
     this.table = table;
   }
