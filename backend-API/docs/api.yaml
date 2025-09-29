@@ -1,0 +1,173 @@
+openapi: 3.0.0
+info:
+  title: Auth Service API
+  version: 1.0.0
+  description: >
+    Backend service for user registration, authentication, and user data retrieval.
+servers:
+  - url: http://localhost:4002
+
+paths:
+  /auth/signup:
+    post:
+      summary: User registration
+      description: Registers a new user with field validation and strong password rules.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignupRequest"
+      responses:
+        "201":
+          description: User successfully registered
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SignupResponse"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+
+  /auth/login:
+    post:
+      summary: User login
+      description: Validates login and password, generates a JWT token and returns it.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+        "401":
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+
+  /auth/user:
+    get:
+      summary: Get user data
+      description: Returns user’s first name and last name if the provided JWT token is valid.
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: User data successfully retrieved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+        "401":
+          description: Unauthorized (missing or invalid token)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    SignupRequest:
+      type: object
+      required:
+        - name
+        - surname
+        - login
+        - password
+      properties:
+        name:
+          type: string
+          example: John
+        surname:
+          type: string
+          example: Doe
+        login:
+          type: string
+          example: johndoe123
+        password:
+          type: string
+          format: password
+          example: StrongPassw0rd!
+
+    SignupResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: User successfully registered
+        payload:
+          type: object
+          properties:
+            name:
+              type: string
+              example: John
+            surname:
+              type: string
+              example: Doe
+
+    LoginRequest:
+      type: object
+      required:
+        - login
+        - password
+      properties:
+        login:
+          type: string
+          example: johndoe123
+        password:
+          type: string
+          format: password
+          example: StrongPassw0rd!
+
+    LoginResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: ok
+        token:
+          type: string
+          description: JWT token
+
+    UserResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: ok
+        payload:
+          type: object
+          properties:
+            name:
+              type: string
+              example: John
+            surname:
+              type: string
+              example: Doe
+
+    ErrorMessage:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Login already exists
+        error:
+          type: string
+          example: Invalid credentials
